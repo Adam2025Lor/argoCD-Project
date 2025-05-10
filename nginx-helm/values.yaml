@@ -1,0 +1,17 @@
+service:
+  type: ClusterIP
+  port: 80
+
+replicaCount: 2
+
+image:
+  tag: latest
+
+serverBlock: |
+  server {
+    listen 80;
+    server_name localhost;
+    location / {
+      return 200 "Hello from NGINX deployed with ArgoCD and Helm!\n";
+    }
+  }
