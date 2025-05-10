@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: nginx-config
   namespace: webapp
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"  
 data:
   index.html: |
     <html>
